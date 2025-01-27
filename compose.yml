@@ -11,9 +11,9 @@ services:
     my-tempo:
       image: grafana/tempo
       container_name: my-tempo
-      command: [ "-config.file=/etc/tempo.yaml" ]
+      command: [ "-config.file=/etc/tempo.yml" ]
       volumes:
-        - ./docker/tempo/tempo.yml:/etc/tempo.yaml:ro
+        - ./docker/tempo/tempo.yml:/etc/tempo.yml:ro
         - ./docker/tempo/tempo-data:/tmp/tempo
       ports:
         - "3200:3200" # Tempo

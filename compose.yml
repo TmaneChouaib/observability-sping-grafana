@@ -1,20 +1,20 @@
 services:
-  my-prometheus:
+  prometheus-service:
     image: prom/prometheus
-    container_name: my-prometheus
+    container_name: prometheus-container
     restart: unless-stopped
     ports:
       - "9090:9090"
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
-    my-tempo:
-      image: grafana/tempo
-      container_name: my-tempo
-      command: [ "-config.file=/etc/tempo.yml" ]
-      volumes:
-        - ./docker/tempo/tempo.yml:/etc/tempo.yml:ro
-        - ./docker/tempo/tempo-data:/tmp/tempo
-      ports:
-        - "3200:3200" # Tempo
-        - "9411:9411" # Zipkin
+  tempo-service:
+    image: grafana/tempo
+    container_name: tempo-container
+    command: [ "-config.file=/etc/tempo.yml" ]
+    volumes:
+      - ./docker/tempo/tempo.yml:/etc/tempo.yml:ro
+      - ./docker/tempo/tempo-data:/tmp/tempo
+    ports:
+      - "3200:3200" # Tempo
+      - "9411:9411" # Zipkin

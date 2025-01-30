@@ -4,7 +4,7 @@ datasources:
   - name: prometheus-datasource
     type: prometheus
     access: proxy
-    url: http://prometheus-container:9090
+    url: http://prometheus-service:9090
     editable: false
     jsonData:
       httpMethod: POST
@@ -16,7 +16,7 @@ datasources:
     type: tempo
     access: proxy
     orgId: 1
-    url: http://tempo-container:3200
+    url: http://tempo-service:3200
     basicAuth: false
     isDefault: true
     version: 1
@@ -35,7 +35,7 @@ datasources:
     uid: loki
     access: proxy
     orgId: 1
-    url: http://loki-container:3100
+    url: http://loki-service:3100
     basicAuth: false
     isDefault: false
     version: 1

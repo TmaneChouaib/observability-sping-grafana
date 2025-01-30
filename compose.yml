@@ -37,3 +37,13 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=password
+
+  product-service:
+    build: ./
+    container_name: product-container
+    depends_on:
+      - tempo-service
+      - loki-service
+    restart: always
+    ports:
+      - "8081:8081"

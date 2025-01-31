@@ -81,16 +81,6 @@ mvn clean install
 
    This command will start Prometheus, Loki, and Grafana services as defined in the `docker-compose.yml` file.
 
-4. **Run the Spring Boot Application**
-
-   Start your Spring Boot application using Maven:
-
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-   The application will be accessible at `http://localhost:8080`.
-
 
 ## <a name="accessing-the-monitoring-tools"></a> 📎 Accessing the Monitoring Tools :
 

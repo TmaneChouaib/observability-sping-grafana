@@ -64,8 +64,14 @@ observability-spring-grafana/
    git clone https://github.com/TmaneChouaib/observability-spring-grafana.git
    cd observability-spring-grafana
    ```
+   
+2. **Build the project using Maven**
+    
+```bash
+mvn clean install
+```
 
-2. **Start the Docker Services**
+3. **Start the Docker Services**
 
    Ensure Docker is running on your system, then execute:
 
@@ -75,7 +81,7 @@ observability-spring-grafana/
 
    This command will start Prometheus, Loki, and Grafana services as defined in the `docker-compose.yml` file.
 
-3. **Run the Spring Boot Application**
+4. **Run the Spring Boot Application**
 
    Start your Spring Boot application using Maven:
 
